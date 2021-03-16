@@ -57,7 +57,7 @@ getRandomQuote();
 
 
 /***
-Generates random background color
+Generates random color
 (idea found at dev.to)
 ***/
 function generateRandomColor() {
