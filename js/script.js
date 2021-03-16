@@ -21,7 +21,7 @@ var quotes = [
     },
     {
         quote: "Whether you think you can, or think you can't, you're right.",
-        source: "Henry Ford",
+        source: "Henry Ford"
     },
     { 
         quote: "Whatever the mind can conceive and believe, it can achieve.",
@@ -50,7 +50,6 @@ Generates random quote from the list of the quotes
 function getRandomQuote() {
     const randomNumber =  Math.floor( Math.random() * 6) + 1;
     return quotes[randomNumber];
-    console.log(quotes[randomNumber]);
 };
 
 getRandomQuote();
@@ -81,29 +80,55 @@ function printQuote() {
 
     if ((randomQuote.hasOwnProperty('citation')) && (randomQuote.hasOwnProperty('year')) && (randomQuote.hasOwnProperty('tag'))) {
         quoteHTML += `
-        <span class="citation">  ${randomQuote.citation} </span>
-        <span class="year"> ${randomQuote.year} </span>
-        <span class="tag"> ${randomQuote.tag} </span>`
+            <span class="citation">
+                ${randomQuote.citation}
+            </span>
+            <span class="year">
+                ${randomQuote.year}
+            </span>
+            <span class="tag">
+                ${randomQuote.tag}
+            </span>
+            `
     } else if (randomQuote.hasOwnProperty('citation') && (randomQuote.hasOwnProperty('tag'))) {
         quoteHTML += `
-        <span class="citation"> ${randomQuote.citation} </span>
-        <span class="tag"> ${randomQuote.tag} </span>`   
+            <span class="citation">
+                ${randomQuote.citation}
+            </span>
+            <span class="tag"> ${randomQuote.tag} </span>
+            `   
     } else if (randomQuote.hasOwnProperty('year') && (randomQuote.hasOwnProperty('tag'))) {
         quoteHTML += `
-        <span class="year"> ${randomQuote.year} </span>
-        <span class="tag"> ${randomQuote.tag} </span>`   
+            <span class="year">
+                ${randomQuote.year}
+            </span>
+            <span class="tag">
+                ${randomQuote.tag}
+            </span>
+            `   
     } else if (randomQuote.hasOwnProperty('citation')) {
         quoteHTML += `
-        <span class="citation"> ${randomQuote.citation} </span>`
+            <span class="citation">
+                ${randomQuote.citation}
+            </span>
+            `
     } else if (randomQuote.hasOwnProperty('year')) {
-        quoteHTML += `<span class="year"> ${randomQuote.year} </span>`
+        quoteHTML += `
+            <span class="year">
+                ${randomQuote.year}
+            </span>
+            `
     } else if (randomQuote.hasOwnProperty('tag')) {
-        quoteHTML += `<span class="tag"> ${randomQuote.tag} </span>`
+        quoteHTML += `
+            <span class="tag">
+                ${randomQuote.tag}
+            </span>
+            `
     }
-    quoteHTML += `
-    </p>
-    `;
-    document.body.style.backgroundColor = generateRandomColor()
+
+    quoteHTML += `</p>`;
+
+    document.body.style.backgroundColor = generateRandomColor();
     return document.getElementById('quote-box').innerHTML = quoteHTML;
 }
 
