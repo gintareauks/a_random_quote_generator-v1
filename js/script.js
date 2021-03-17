@@ -79,54 +79,30 @@ function printQuote() {
     ${randomQuote.source}
     `
 
-    if ((randomQuote.hasOwnProperty('citation')) && (randomQuote.hasOwnProperty('year')) && (randomQuote.hasOwnProperty('tag'))) {
-        quoteHTML += `
-            <span class="citation">
-                ${randomQuote.citation}
-            </span>
-            <span class="year">
-                ${randomQuote.year}
-            </span>
-            <span class="tag">
-                ${randomQuote.tag}
-            </span>
-            `
-    } else if (randomQuote.hasOwnProperty('citation') && (randomQuote.hasOwnProperty('tag'))) {
-        quoteHTML += `
-            <span class="citation">
-                ${randomQuote.citation}
-            </span>
-            <span class="tag"> ${randomQuote.tag} </span>
-            `   
-    } else if (randomQuote.hasOwnProperty('year') && (randomQuote.hasOwnProperty('tag'))) {
-        quoteHTML += `
-            <span class="year">
-                ${randomQuote.year}
-            </span>
-            <span class="tag">
-                ${randomQuote.tag}
-            </span>
-            `   
-    } else if (randomQuote.hasOwnProperty('citation')) {
+    if (randomQuote.citation) {
         quoteHTML += `
             <span class="citation">
                 ${randomQuote.citation}
             </span>
             `
-    } else if (randomQuote.hasOwnProperty('year')) {
+    } 
+
+    if (randomQuote.year) {
         quoteHTML += `
             <span class="year">
                 ${randomQuote.year}
             </span>
             `
-    } else if (randomQuote.hasOwnProperty('tag')) {
+    } 
+    
+    if (randomQuote.tag) {
         quoteHTML += `
             <span class="tag">
                 ${randomQuote.tag}
             </span>
             `
     }
-
+    
     quoteHTML += `</p>`;
 
     document.body.style.backgroundColor = generateRandomColor();
