@@ -48,8 +48,9 @@ Generates random quote from the list of the quotes
 ***/
 
 function getRandomQuote() {
-    const randomNumber =  Math.floor( Math.random() * 6) + 1;
-    return quotes[randomNumber];
+    const randomNumber =  Math.floor(Math.random() * quotes.length);
+    const randomQuote = quotes[randomNumber];
+    return randomQuote;
 };
 
 getRandomQuote();
