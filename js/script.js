@@ -6,7 +6,7 @@ project 1 - A Random Quote Generator
 /*** 
 A complete list of the quotes  
 ***/
-var quotes = [
+const quotes = [
     {
         quote: "What you think you become. What you feel you attract. What you imagine you create.",
         source: "Buddha",
@@ -49,9 +49,8 @@ Generates random quote from the list of the quotes
 
 function getRandomQuote() {
     const randomNumber =  Math.floor(Math.random() * quotes.length);
-    const randomQuote = quotes[randomNumber];
-    return randomQuote;
-};
+    return quotes[randomNumber];
+}
 
 getRandomQuote();
 
@@ -61,7 +60,7 @@ Generates random color
 (idea found at dev.to)
 ***/
 function generateRandomColor() {
-    var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
     return randomColor;
 }
 
